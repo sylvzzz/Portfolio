@@ -70,7 +70,7 @@ export default function Portfolio() {
 
   const socialLinks = [
     { name: "GitHub", icon: Github, url: "https://github.com/sylvzzz" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-silva-774b1b382/l" },
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" },
     { name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
   ];
 
