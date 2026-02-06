@@ -35,7 +35,7 @@ export default function Portfolio() {
       description: "Site desenvolvido para uma amiga minha fotógrafa para divulgar o seu trabalho",
       tech: ["Node JS", "MySQL", "JavaScript", "HTML", "Vercel", "Supabase/PostreSQL", "GitHub"],
       downloadUrl: "#",
-      demoUrl: "photography-jr.vercel.app"
+      demoUrl: "https://photography-jr.vercel.app/"
     },
     {
       id: 5,
@@ -215,8 +215,6 @@ export default function Portfolio() {
                         <a onClick={() => {
                           if (project.downloadUrl === '#') {
                           alert('O Download não está disponível para este projeto');
-                          } else {
-                          window.open(project.downloadUrl, '_blank');
                           }
                           }}
                           href={project.downloadUrl}
@@ -229,8 +227,6 @@ export default function Portfolio() {
                         onClick={() => {
                           if (project.demoUrl === '#') {
                           alert('A Demonstração deste projeto não está disponível');
-                          } else {
-                          window.open(project.demoUrl, '_blank');
                           }
                           }}
                           href={project.demoUrl}
