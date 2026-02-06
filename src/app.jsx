@@ -218,6 +218,7 @@ export default function Portfolio() {
                           }
                           }}
                           href={project.downloadUrl}
+                          target="_blank"
                           className="group/btn flex-1 relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
                         >
                           <Download className="w-5 h-5 relative z-10" />
@@ -230,6 +231,7 @@ export default function Portfolio() {
                           }
                           }}
                           href={project.demoUrl}
+                          target="_blank"
                           className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 hover:border-purple-400 rounded-xl font-semibold text-gray-700 hover:text-purple-600 transition-all duration-300"
                         >
                           <ExternalLink className="w-5 h-5" />
