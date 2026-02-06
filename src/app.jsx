@@ -111,7 +111,7 @@ export default function Portfolio() {
                      borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1',
                    }}>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web, graças á minha paixão procuro sempre aprender mais sobre estas áres, o que me permite progredir mais facilmente como desenvolvedor. 
+                  Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web, graças á minha paixão procuro sempre aprender mais sobre estas áreas, o que me permite progredir mais facilmente como desenvolvedor. 
                   Neste momento sou estudante da 42 Lisboa, onde estou a aprender Python e C principalmente e adquirindo skills importantes como peer-to-peer e alto rigor.
                   Fora da 42 procuro melhorar o meu desenvolvimento web, ultimamente tenho me focado em React, Node JS e Tailwindcss.
                 </p>
@@ -216,7 +216,7 @@ export default function Portfolio() {
                           if (project.downloadUrl === '#') {
                           alert('O Download não está disponível para este projeto');
                           } else {
-                          window.open(project.demoUrl, '_blank');
+                          window.open(project.downloadUrl, '_blank');
                           }
                           }}
                           href={project.downloadUrl}
