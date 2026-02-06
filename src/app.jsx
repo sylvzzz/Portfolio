@@ -23,7 +23,7 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      name: "Platforma de Agenda",
+      name: "Plataforma de Agenda",
       description: "Plataforma CRUD similar ao Calendário Google para gerir reuniões internas de uma Escola Básica",
       tech: ["PHP", "MySQL", "JavaScript", "HTML", "Windows Server 2012"],
       downloadUrl: "https://github.com/sylvzzz/Plataforma-de-Agenda",
