@@ -33,7 +33,7 @@ export default function Portfolio() {
       id: 4,
       name: "Photography JR",
       description: "Site desenvolvido para uma amiga minha fotógrafa para divulgar o seu trabalho",
-      tech: ["Node JS", "MySQL", "JavaScript", "HTML", "Vercel", "Supabase/PostreSQL", "GitHub"],
+      tech: ["Node.js", "MySQL", "JavaScript", "HTML", "Vercel", "Supabase/PostreSQL", "GitHub"],
       downloadUrl: "#",
       demoUrl: "https://photography-jr.vercel.app/"
     },
@@ -64,8 +64,9 @@ export default function Portfolio() {
   ];
 
   const skills = [
-    "PHP", "MySQL", "JavaScript", "HTML", "CSS", "React", 
-    "Tailwind CSS", "Node.js", "Python", "C", "Linux", "Bash"
+    "PHP", "MySQL", "JavaScript", "HTML", "CSS", "React", "Git",
+    "Tailwindcss", "Node.js", "Python", "C", "Linux", "Bash", "Vercel", "FIleZilla",
+    "Peer-to-Peer", "System Administration", "Windows Server"
   ];
 
   const socialLinks = [
@@ -113,7 +114,7 @@ export default function Portfolio() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web, graças á minha paixão procuro sempre aprender mais sobre estas áreas, o que me permite progredir mais facilmente como desenvolvedor. 
                   Neste momento sou estudante da 42 Lisboa, onde estou a aprender Python e C principalmente e adquirindo skills importantes como peer-to-peer e alto rigor.
-                  Fora da 42 procuro melhorar o meu desenvolvimento web, ultimamente tenho me focado em React, Node JS e Tailwindcss.
+                  Fora da 42 procuro melhorar o meu desenvolvimento web, ultimamente tenho me focado em React, Node.js e Tailwindcss.
                 </p>
               </div>
             </div>
