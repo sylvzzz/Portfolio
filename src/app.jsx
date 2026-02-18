@@ -60,6 +60,14 @@ export default function Portfolio() {
       tech: ["React", "Tailwindcss", "Vercel"],
       downloadUrl: "#",
       demoUrl: "#"
+    },
+    {
+      id: 8,
+      name: "Push_Swap",
+      description: "Implementação de um algoritmo de ordenação usando 2 stackse um conjunto limitado de instruções para minimizar operações, no meu caso, usei o Radix Sort",
+      tech: ["C", "Linux"],
+      downloadUrl: "https://github.com/sylvzzz/42-libft",
+      demoUrl: "#"
     }
   ];
 
