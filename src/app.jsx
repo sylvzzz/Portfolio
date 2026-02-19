@@ -64,7 +64,7 @@ export default function Portfolio() {
     {
       id: 8,
       name: "Push_Swap",
-      description: "Implementação de um algoritmo de ordenação usando 2 stackse um conjunto limitado de instruções para minimizar operações, no meu caso, usei o Radix Sort",
+      description: "Implementação de um algoritmo de ordenação usando 2 stacks e um conjunto limitado de instruções para minimizar operações, no meu caso, usei o Radix Sort",
       tech: ["C", "Linux"],
       downloadUrl: "https://github.com/sylvzzz/push_swap",
       demoUrl: "#"
