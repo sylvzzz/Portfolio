@@ -221,9 +221,10 @@ export default function Portfolio() {
 
                       {/* Action Buttons */}
                       <div className="flex gap-4">
-                        <a onClick={() => {
+                        <a onClick={(e) => {
                           if (project.downloadUrl === '#') {
-                          alert('O Download não está disponível para este projeto');
+                            e.preventDefault();
+                            alert('O Download não está disponível para este projeto');
                           }
                           }}
                           href={project.downloadUrl}
@@ -234,10 +235,11 @@ export default function Portfolio() {
                           <span className="relative z-10">Download</span>
                         </a>
                         <a
-                        onClick={() => {
-                          if (project.demoUrl === '#') {
-                          alert('A Demonstração deste projeto não está disponível');
-                          }
+                        onClick={(e) => {
+                        if (project.demoUrl === '#') {
+                            e.preventDefault();
+                            alert('A Demonstração deste projeto não está disponível');
+                            }
                           }}
                           href={project.demoUrl}
                           target="_blank"
