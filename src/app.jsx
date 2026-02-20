@@ -73,7 +73,7 @@ export default function Portfolio() {
 
   const skills = [
     "PHP", "MySQL", "JavaScript", "HTML", "CSS", "React", "Git",
-    "Tailwindcss", "Node.js", "Python", "C", "Python", "Linux", "Bash", "Vercel", "FileZilla",
+    "Tailwindcss", "Node.js", "Python", "C", "Python", "Linux", "Bash", "Vercel", "FileZilla", "Docker",
     "Peer-to-Peer", "Computer Networks" , "Problem Solving" , "System Administration", "Windows Server" , "Email Automation"
   ];
 
