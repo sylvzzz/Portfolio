@@ -1,8 +1,11 @@
-*MyPortfolio*
+**MyPortfolio**
 
 ## Description
 
 **MyPortfolio** is a simple project that consists on a simple website that acts like a **hub** for my projects, social media, and tech stack/skills, overall just who i am as a developer.
+You can view it <a href="https://diogo-lb-silva.vercel.app">here</a>.
+
+ps: ignore the other link showing in this repository
 
 ---
 
