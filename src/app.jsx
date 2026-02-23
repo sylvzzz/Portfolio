@@ -21,7 +21,7 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      name: "Plataforma de Quizzes",
+      name: "Quizzes Platform",
       description: "Web Platform made for teachers and students to take quizzes as a way to dynamize learning and teaching. Main functionalities include Top 10 student leaderboard with most points scored, account settings and Subjects Hubs.",
       tech: [
         { name: "PHP", icon: "devicon-php-plain colored" },
@@ -36,7 +36,7 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      name: "Plataforma de Agenda",
+      name: "Calendar Platform",
       description: "CRUD Web App for scheduling meetings developed for a school to manage internal meetings, similar to google calendar, Guest mode feature avaliable for view only of the schedule, asks for login to Schedule or to edit. Simple Authorization implemented so only the user that scheduled the meeting can edit or delete meeting.",
       tech: [
         { name: "PHP", icon: "devicon-php-plain colored" },
@@ -67,7 +67,7 @@ export default function Portfolio() {
     },
     {
       id: 5,
-      name: "Libft (Library em C)",
+      name: "Libft (Library in C)",
       description: "First project of 42 common core, its goal is to consolidate rigorous programming copying already existing C functions, memory management, linked lists and among others.",
       tech: [
         { name: "C", icon: "devicon-c-plain colored" },
@@ -93,7 +93,7 @@ export default function Portfolio() {
     },
     {
       id: 7,
-      name: "Portfolio",
+      name: "MyPortfolio",
       description: "Current page, that acts as MyPortfolio, built using React and Tailwindcss",
       tech: [
         { name: "React", icon: "devicon-react-original colored" },
