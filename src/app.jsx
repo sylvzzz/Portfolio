@@ -79,8 +79,7 @@ export default function Portfolio() {
 
   const socialLinks = [
     { name: "GitHub", icon: Github, url: "https://github.com/sylvzzz" },
-    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" },
-    { name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
+    { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" }
   ];
 
   return (
@@ -120,7 +119,7 @@ export default function Portfolio() {
                      borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1',
                    }}>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web, graças á minha paixão procuro sempre aprender mais sobre estas áreas, o que me permite progredir mais facilmente como desenvolvedor. 
+                  Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web.
                   Neste momento sou estudante da 42 Lisboa, onde estou a aprender Python e C principalmente e adquirindo skills importantes como peer-to-peer e alto rigor.
                   Fora da 42 procuro melhorar o meu desenvolvimento web, ultimamente tenho me focado em React, Node.js e Tailwindcss.
                 </p>
@@ -135,7 +134,7 @@ export default function Portfolio() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-12 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
@@ -231,7 +230,7 @@ export default function Portfolio() {
                           target="_blank"
                           className="group/btn flex-1 relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
                         >
-                          <Download className="w-5 h-5 relative z-10" />
+                          <Download className="w-10 h-5 relative z-10" />
                           <span className="relative z-10">Download</span>
                         </a>
                         <a
