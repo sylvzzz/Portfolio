@@ -8,7 +8,7 @@ export default function Portfolio() {
     {
       id: 1,
       name: "PAP 2025",
-      description: "Rede Social/Aplicação Web similar ao Reddit criada para conectar alunos da minha escola secundária",
+      description: "My PAP(Professional Final Project for professional courses in Portugal). This project was developed with 2 other peers of my 24-25 class. This web platform consists in a social media web app for our school as a way to connect the community. Our project includes features such as News of our school, forums similar to reddit, and verification to only allow accounts with student email",
       tech: [
         { name: "PHP", icon: "devicon-php-plain colored" },
         { name: "MySQL", icon: "devicon-mysql-plain colored" },
@@ -22,7 +22,7 @@ export default function Portfolio() {
     {
       id: 2,
       name: "Plataforma de Quizzes",
-      description: "Aplicação Web desenvolvida para dinamizar o ensino de uma escola básica que estagiei fornecendo Quizzes aos alunos",
+      description: "Web Platform made for teachers and students to take quizzes as a way to dynamize learning and teaching. Main functionalities include Top 10 student leaderboard with most points scored, account settings and Subjects Hubs.",
       tech: [
         { name: "PHP", icon: "devicon-php-plain colored" },
         { name: "MySQL", icon: "devicon-mysql-plain colored" },
@@ -37,7 +37,7 @@ export default function Portfolio() {
     {
       id: 3,
       name: "Plataforma de Agenda",
-      description: "Plataforma CRUD similar ao Calendário Google para gerir reuniões internas de uma Escola Básica",
+      description: "CRUD Web App for scheduling meetings developed for a school to manage internal meetings, similar to google calendar, Guest mode feature avaliable for view only of the schedule, asks for login to Schedule or to edit. Simple Authorization implemented so only the user that scheduled the meeting can edit or delete meeting.",
       tech: [
         { name: "PHP", icon: "devicon-php-plain colored" },
         { name: "MySQL", icon: "devicon-mysql-plain colored" },
@@ -52,7 +52,7 @@ export default function Portfolio() {
     {
       id: 4,
       name: "Photography JR",
-      description: "Site desenvolvido para uma amiga minha fotógrafa para divulgar o seu trabalho",
+      description: "Full Stack WebSite developed for a photographer friend to help her show her work.",
       tech: [
         { name: "Node.js", icon: "devicon-nodejs-plain colored" },
         { name: "MySQL", icon: "devicon-mysql-plain colored" },
@@ -68,7 +68,7 @@ export default function Portfolio() {
     {
       id: 5,
       name: "Libft (Library em C)",
-      description: "Recriação de Funções em C populares como Printf",
+      description: "First project of 42 common core, its goal is to consolidate rigorous programming copying already existing C functions, memory management, linked lists and among others.",
       tech: [
         { name: "C", icon: "devicon-c-plain colored" },
         { name: "Linux", icon: "devicon-linux-plain" },
@@ -80,7 +80,7 @@ export default function Portfolio() {
     {
       id: 6,
       name: "born2beroot",
-      description: "Servidor criado em máquina virtual usando debian, contém serviços tais como SSH, Firewall, WordPress e MariaDB",
+      description: "Server created using a debian Virtual Machine, with services configured such as SSH, Firewall, WordPress and MariaDB",
       tech: [
         { name: "Linux", icon: "devicon-linux-plain" },
         { name: "WordPress", icon: "devicon-wordpress-plain colored" },
@@ -94,7 +94,7 @@ export default function Portfolio() {
     {
       id: 7,
       name: "Portfolio",
-      description: "Página atual, desenvolvida em React e Tailwindcss",
+      description: "Current page, that acts as MyPortfolio, built using React and Tailwindcss",
       tech: [
         { name: "React", icon: "devicon-react-original colored" },
         { name: "Tailwindcss", icon: "devicon-tailwindcss-plain colored" },
@@ -106,7 +106,7 @@ export default function Portfolio() {
     {
       id: 8,
       name: "Push_Swap",
-      description: "Implementação de um algoritmo de ordenação usando 2 stacks e um conjunto limitado de instruções para minimizar operações, no meu caso, usei o Radix Sort",
+      description: "This project consists in an optimized Sorting algorithm project from the 42 curriculum. The goal is to sort a stack of integers in ascending order using two stacks (`a` and `b`) and a restricted set of operations, while producing the smallest possible number of instructions",
       tech: [
         { name: "C", icon: "devicon-c-plain colored" },
         { name: "Linux", icon: "devicon-linux-plain" },
@@ -169,7 +169,7 @@ export default function Portfolio() {
                  }}>
               <Sparkles className="w-4 h-4 text-purple-500" />
               <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Estudante @ 42 Lisboa
+                Student @ 42 Lisboa
               </span>
             </div>
 
@@ -189,10 +189,7 @@ export default function Portfolio() {
                      borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1',
                    }}>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Olá, sou o Diogo. Tenho 19 anos e sou super apaixonado por tecnologia e desenvolvimento web.
-                  Neste momento sou estudante da 42 Lisboa, onde estou a aprender Python e C principalmente e adquirindo skills importantes como peer-to-peer e alto rigor.
-                  Fora da 42 procuro melhorar o meu desenvolvimento web, ultimamente tenho me focado em React, Node.js e Tailwindcss.
-                </p>
+                 Hello, I'm Diogo. I'm 19 years old and I'm really passionate about technology and web development. At the moment, I'm a student at 42 Lisbon, where I'm learning mainly Python and C, and acquiring important skills like peer-to-peer learning and high rigor. Outside of 42, I try to improve my web development, lately, I've been focusing on React, Node.js, and Tailwind CSS.</p>
               </div>
             </div>
 
@@ -301,7 +298,7 @@ export default function Portfolio() {
                           onClick={(e) => {
                             if (project.downloadUrl === '#') {
                               e.preventDefault();
-                              alert('O Download não está disponível para este projeto');
+                              alert('The download is not available for this project');
                             }
                           }}
                           href={project.downloadUrl}
@@ -315,7 +312,7 @@ export default function Portfolio() {
                           onClick={(e) => {
                             if (project.demoUrl === '#') {
                               e.preventDefault();
-                              alert('A Demonstração deste projeto não está disponível');
+                              alert('There ins´t a showcase is not available for this project yet.');
                             }
                           }}
                           href={project.demoUrl}
