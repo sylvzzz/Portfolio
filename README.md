@@ -105,7 +105,7 @@ Finally on line 262, change my name to yours:
 ```
 
 
-**If you really intend to deploy your portfolio follow the next commands, else you just want to run it locally just enter your project folder in a terminal window and type npm run dev, then just enter your browser and access <a href="https://localhost:5173">localhost:5173</a>"**
+**If you really intend to deploy your portfolio follow the next commands, else you just want to run it locally just enter your project folder in a terminal window and type **npm install** and **npm run dev**, then just enter your browser and access <a href="https://localhost:5173">localhost:5173</a>"**
 
 ## Moving files to the deployment repository
 

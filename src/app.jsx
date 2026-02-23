@@ -134,7 +134,7 @@ export default function Portfolio() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-12 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
