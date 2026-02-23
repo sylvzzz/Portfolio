@@ -178,7 +178,7 @@ export default function Portfolio() {
               Diogo Silva
             </h1>
             <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-12">
-              Full Stack Developer
+              Junior Full Stack Developer
             </h2>
 
             {/* Description */}
@@ -312,7 +312,7 @@ export default function Portfolio() {
                           onClick={(e) => {
                             if (project.demoUrl === '#') {
                               e.preventDefault();
-                              alert('There ins´t a showcase is not available for this project yet.');
+                              alert('There ins´t a showcase available for this project yet.');
                             }
                           }}
                           href={project.demoUrl}
