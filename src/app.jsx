@@ -100,7 +100,7 @@ export default function Portfolio() {
         { name: "Tailwindcss", icon: "devicon-tailwindcss-plain colored" },
         { name: "Vercel", icon: "devicon-vercel-plain" },
       ],
-      downloadUrl: "#",
+      downloadUrl: "https://github.com/sylvzzz/Portfolio",
       demoUrl: "#"
     },
     {
