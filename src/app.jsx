@@ -112,7 +112,7 @@ export default function Portfolio() {
         { name: "Linux", icon: "devicon-linux-plain" },
       ],
       downloadUrl: "https://github.com/sylvzzz/push_swap",
-      demoUrl: "#"
+      demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7432215798431105024/?originTrackingId=1V%2B7qxevwwJ2tsffoflyoQ%3D%3D"
     }
   ];
 
