@@ -112,7 +112,7 @@ export default function Portfolio() {
         { name: "Linux", icon: "devicon-linux-plain" },
       ],
       downloadUrl: "https://github.com/sylvzzz/push_swap",
-      demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7432215798431105024/?originTrackingId=1V%2B7qxevwwJ2tsffoflyoQ%3D%3D"
+      demoUrl: "https://www.linkedin.com/posts/diogo-lb-silva_algorithm-programming-c-activity-7432361780456095744-sBHs?utm_source=share&utm_medium=member_ios&rcm=ACoAAF5-g4gBW8QOO4F5K8vMQ7Vvt3uasQJNTPs"
     }
   ];
 
