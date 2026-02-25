@@ -68,7 +68,7 @@ export default function Portfolio() {
     {
       id: 5,
       name: "Libft (Library in C)",
-      description: "First project of 42 common core, its goal is to consolidate rigorous programming copying already existing C functions, memory management, linked lists and among others.",
+      description: "First project of 42 common core, its goal is to consolidate rigorous programming by reacrating already existing C functions, learning memory management, linked lists and among others.",
       tech: [
         { name: "C", icon: "devicon-c-plain colored" },
         { name: "Linux", icon: "devicon-linux-plain" },
@@ -80,13 +80,15 @@ export default function Portfolio() {
     {
       id: 6,
       name: "born2beroot",
-      description: "Server created using a debian Virtual Machine, with services configured such as SSH, Firewall, WordPress and MariaDB",
+      description: "Server created using a Debian Virtual Machine, with services configured such as SSH, Firewall, MariaDB and WordPress with a working website",
       tech: [
         { name: "Linux", icon: "devicon-linux-plain" },
         { name: "WordPress", icon: "devicon-wordpress-plain colored" },
         { name: "MariaDB", icon: "devicon-mariadb-plain colored" },
         { name: "Bash", icon: "devicon-bash-plain" },
         { name: "SSH", icon: null },
+        { name: "System Administration", icon: null },
+        { name: "Computer Networks", icon: null },
       ],
       downloadUrl: "#",
       demoUrl: "#"
