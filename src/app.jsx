@@ -251,7 +251,7 @@ export default function Portfolio() {
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
               <Layers className="w-8 h-8 text-purple-600" />
-              <h2 className="text-4xl font-bold text-gray-900">Projetos</h2>
+              <h2 className="text-4xl font-bold text-gray-900">Projects</h2>
             </div>
 
             <div className="space-y-6">
