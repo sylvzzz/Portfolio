@@ -297,7 +297,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <a
             href={project.downloadUrl}
             target="_blank"
@@ -308,7 +308,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
                 alert('The download is not available for this project');
               }
             }}
-            className="flex-1 relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             <Download className="w-5 h-5" />
             <span>Download</span>
