@@ -123,13 +123,14 @@ const SKILLS = [
   { name: "CSS", icon: "devicon-css3-plain colored" },
   { name: "React", icon: "devicon-react-original colored" },
   { name: "Git", icon: "devicon-git-plain colored" },
-  { name: "Tailwindcss", icon: "devicon-tailwindcss-plain colored" },
+  { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
   { name: "Node.js", icon: "devicon-nodejs-plain colored" },
   { name: "Python", icon: "devicon-python-plain colored" },
   { name: "C", icon: "devicon-c-plain colored" },
   { name: "Linux", icon: "devicon-linux-plain" },
   { name: "Bash", icon: "devicon-bash-plain" },
   { name: "Vercel", icon: "devicon-vercel-plain" },
+  { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   { name: "Docker", icon: "devicon-docker-plain colored" },
   { name: "FileZilla", icon: "devicon-filezilla-plain colored" },
   { name: "Windows Server", icon: "devicon-windows8-plain colored" },
@@ -140,6 +141,7 @@ const SKILLS = [
   { name: "Computer Networks", icon: null },
   { name: "Problem Solving", icon: null },
   { name: "System Administration", icon: null },
+  { name: "SSH", icon: null },
   { name: "Email Automation", icon: null },
 ];
 
