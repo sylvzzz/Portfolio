@@ -116,7 +116,7 @@ const PROJECTS = [
   {
     id: 9,
     name: "Piscine Python",
-    description: "This project consists in a 42 mini piscine, to learn more about Python and Object Oriented Programming, having 11 Modules with different topics about Python.
+    description: "This project consists in a 42 mini piscine, to learn more about Python and Object Oriented Programming, having 11 Modules with different topics about Python."
     tech: [
       { name: "Python", icon: "devicon-python-plain colored" },
     ],
