@@ -112,6 +112,16 @@ const PROJECTS = [
     ],
     downloadUrl: "https://github.com/sylvzzz/push_swap",
     demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7432215798431105024/?originTrackingId=1V%2B7qxevwwJ2tsffoflyoQ%3D%3D"
+  },
+  {
+    id: 9,
+    name: "Piscine Python",
+    description: "This project consists in a 42 mini piscine, to learn more about Python and Object Oriented Programming, having 11 Modules with different topics about Python.
+    tech: [
+      { name: "Python", icon: "devicon-python-plain colored" },
+    ],
+    downloadUrl: "https://github.com/sylvzzz/42_Piscine_Python",
+    demoUrl: "#"
   }
 ];
 
