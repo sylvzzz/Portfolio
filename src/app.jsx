@@ -179,7 +179,7 @@ const SOCIAL_LINKS = [
   { name: "GitHub", icon: Github, url: "https://github.com/sylvzzz" },
   { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" },
   { name: "Email", icon: Mail, url: "mailto:diogolbsilva2006@gmail.com" },
-  { name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
+  //{ name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
 ];
 
 // ─── ANIMATIONS (CSS) ─────────────────────────────────────────────────────────
