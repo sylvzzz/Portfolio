@@ -28,7 +28,8 @@ const PROJECTS = [
           { name: "Node.js", icon: "devicon-nodejs-plain colored" },
           { name: "MySQL", icon: "devicon-mysql-plain colored" },
           { name: "Docker", icon: "devicon-docker-plain colored" },
-          { name: "Google Cloud", icon: "devicon-googlecloud-plain colored" }
+          { name: "Google Cloud", icon: "devicon-googlecloud-plain colored" },
+          { name: "Vercel", icon: "devicon-vercel-plain" }
     ],
     downloadUrl: "https://github.com/sylvzzz/FrienDebt",
     demoUrl: "#"
@@ -157,6 +158,7 @@ const SKILLS = [
   { name: "Vercel", icon: "devicon-vercel-plain" },
   { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
   { name: "Docker", icon: "devicon-docker-plain colored" },
+  { name: "Google Cloud", icon: "devicon-googlecloud-plain colored" },
   { name: "FileZilla", icon: "devicon-filezilla-plain colored" },
   { name: "Windows Server", icon: "devicon-windows8-plain colored" },
   { name: "GitHub", icon: "devicon-github-original" },
@@ -164,6 +166,9 @@ const SKILLS = [
   { name: "WordPress", icon: "devicon-wordpress-plain colored" },
   { name: "Peer-to-Peer", icon: null },
   { name: "Computer Networks", icon: null },
+  { name: "Computer Hardware", icon: null },
+  { name: "Technical Support", icon: null },
+  { name: "System Design", icon: null },
   { name: "Problem Solving", icon: null },
   { name: "System Administration", icon: null },
   { name: "SSH", icon: null },
@@ -172,7 +177,9 @@ const SKILLS = [
 
 const SOCIAL_LINKS = [
   { name: "GitHub", icon: Github, url: "https://github.com/sylvzzz" },
-  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" }
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/diogo-lb-silva" },
+  { name: "Email", icon: Mail, url: "mailto:diogolbsilva2006@gmail.com" },
+  { name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
 ];
 
 // ─── ANIMATIONS (CSS) ─────────────────────────────────────────────────────────
