@@ -20,6 +20,21 @@ const PROJECTS = [
   },
   {
     id: 2,
+    name: "FrienDebt",
+    description: "Full-stack web application designed to help groups of friends manage shared expenses. Users can add eachother as friends , record who paid, who owes, and how much, with automatic balance calculations. The platform ensures transparency and simplifies settling debts so no one forgets to pay.",
+    tech: [
+          { name: "React", icon: "devicon-react-original colored" },
+          { name: "TailwindCSS", icon: "devicon-tailwindcss-plain colored" },
+          { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+          { name: "MySQL", icon: "devicon-mysql-plain colored" },
+          { name: "Docker", icon: "devicon-docker-plain colored" },
+          { name: "Google Cloud", icon: "devicon-googlecloud-plain colored" }
+    ],
+    downloadUrl: "https://github.com/sylvzzz/FrienDebt",
+    demoUrl: "#"
+  },
+  {
+    id: 3,
     name: "Quizzes Platform",
     description: "Web Platform made for teachers and students to take quizzes as a way to dynamize learning and teaching. Main functionalities include Top 10 student leaderboard with most points scored, account settings and Subjects Hubs.",
     tech: [
@@ -34,7 +49,7 @@ const PROJECTS = [
     demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7419830162613178368/?originTrackingId=jRpTMNSelH7ADEnDLdKmMA%3D%3D"
   },
   {
-    id: 3,
+    id: 4,
     name: "Calendar Platform",
     description: "CRUD Web App for scheduling meetings developed for a school to manage internal meetings, similar to google calendar, Guest mode feature avaliable for view only of the schedule, asks for login to Schedule or to edit. Simple Authorization implemented so only the user that scheduled the meeting can edit or delete meeting.",
     tech: [
@@ -49,7 +64,18 @@ const PROJECTS = [
     demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7420907171279970305/?originTrackingId=6eySVukcMELvKWB3fdglwA%3D%3D"
   },
   {
-    id: 4,
+    id: 5,
+    name: "Push_Swap",
+    description: "This project consists in an optimized Sorting algorithm project from the 42 curriculum. The goal is to sort a stack of integers in ascending order using two stacks (`a` and `b`) and a restricted set of operations, while producing the smallest possible number of instructions",
+    tech: [
+      { name: "C", icon: "devicon-c-plain colored" },
+      { name: "Linux", icon: "devicon-linux-plain" },
+    ],
+    downloadUrl: "https://github.com/sylvzzz/push_swap",
+    demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7432215798431105024/?originTrackingId=1V%2B7qxevwwJ2tsffoflyoQ%3D%3D"
+  },
+  {
+    id: 6,
     name: "Photography JR",
     description: "Full Stack WebSite developed for a photographer friend to help her show her work.",
     tech: [
@@ -65,19 +91,29 @@ const PROJECTS = [
     demoUrl: "https://photography-jr.vercel.app/"
   },
   {
-    id: 5,
-    name: "Libft (Library in C)",
-    description: "First project of 42 common core, its goal is to consolidate rigorous programming copying already existing C functions, memory management, linked lists and among others.",
+    id: 7,
+    name: "MyPortfolio",
+    description: "Current page, that acts as MyPortfolio, built using React and Tailwindcss",
     tech: [
-      { name: "C", icon: "devicon-c-plain colored" },
-      { name: "Linux", icon: "devicon-linux-plain" },
-      { name: "Bash", icon: "devicon-bash-plain" },
+      { name: "React", icon: "devicon-react-original colored" },
+      { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
+      { name: "Vercel", icon: "devicon-vercel-plain" },
     ],
-    downloadUrl: "https://github.com/sylvzzz/42-libft",
+    downloadUrl: "https://github.com/sylvzzz/Portfolio",
     demoUrl: "#"
   },
   {
-    id: 6,
+    id: 8,
+    name: "Piscine Python",
+    description: "This project consists in a 42 mini piscine, to learn more about Python and Object Oriented Programming, having 11 Modules with different topics about Python.",
+    tech: [
+      { name: "Python", icon: "devicon-python-plain colored" },
+    ],
+    downloadUrl: "https://github.com/sylvzzz/42_Piscine_Python",
+    demoUrl: "#"
+  },
+  {
+    id: 9,
     name: "born2beroot",
     description: "Server created using a debian Virtual Machine, with services configured such as SSH, Firewall, WordPress and MariaDB",
     tech: [
@@ -91,36 +127,15 @@ const PROJECTS = [
     demoUrl: "#"
   },
   {
-    id: 7,
-    name: "MyPortfolio",
-    description: "Current page, that acts as MyPortfolio, built using React and Tailwindcss",
-    tech: [
-      { name: "React", icon: "devicon-react-original colored" },
-      { name: "Tailwindcss", icon: "devicon-tailwindcss-plain colored" },
-      { name: "Vercel", icon: "devicon-vercel-plain" },
-    ],
-    downloadUrl: "https://github.com/sylvzzz/Portfolio",
-    demoUrl: "#"
-  },
-  {
-    id: 8,
-    name: "Push_Swap",
-    description: "This project consists in an optimized Sorting algorithm project from the 42 curriculum. The goal is to sort a stack of integers in ascending order using two stacks (`a` and `b`) and a restricted set of operations, while producing the smallest possible number of instructions",
+    id: 10,
+    name: "Libft (Library in C)",
+    description: "First project of 42 common core, its goal is to consolidate rigorous programming copying already existing C functions, memory management, linked lists and among others.",
     tech: [
       { name: "C", icon: "devicon-c-plain colored" },
       { name: "Linux", icon: "devicon-linux-plain" },
+      { name: "Bash", icon: "devicon-bash-plain" },
     ],
-    downloadUrl: "https://github.com/sylvzzz/push_swap",
-    demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7432215798431105024/?originTrackingId=1V%2B7qxevwwJ2tsffoflyoQ%3D%3D"
-  },
-  {
-    id: 9,
-    name: "Piscine Python",
-    description: "This project consists in a 42 mini piscine, to learn more about Python and Object Oriented Programming, having 11 Modules with different topics about Python.",
-    tech: [
-      { name: "Python", icon: "devicon-python-plain colored" },
-    ],
-    downloadUrl: "https://github.com/sylvzzz/42_Piscine_Python",
+    downloadUrl: "https://github.com/sylvzzz/42-libft",
     demoUrl: "#"
   }
 ];
