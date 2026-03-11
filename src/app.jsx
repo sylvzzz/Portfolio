@@ -244,16 +244,14 @@ const Header = () => (
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-4">
+     <div className="flex flex-wrap gap-4">
       {SOCIAL_LINKS.map((social, index) => (
       <a
         key={social.name}
         href={social.url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden ${
-          index >= 2 ? 'w-[calc(50%-8px)] max-w-[155px] sm:w-auto' : ''
-        }`}
+        className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
       >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
