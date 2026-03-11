@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers } from 'lucide-react';
+import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram } from 'lucide-react';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -172,7 +172,7 @@ const SKILLS = [
   { name: "Problem Solving", icon: null },
   { name: "System Administration", icon: null },
   { name: "SSH", icon: null },
-  { name: "Email Automation", icon: null },
+  { name: "Email Automation", icon: null }
 ];
 
 const SOCIAL_LINKS = [
