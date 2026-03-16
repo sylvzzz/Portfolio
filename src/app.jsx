@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram } from 'lucide-react';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -47,7 +47,7 @@ const PROJECTS = [
       { name: "Windows Server 2012", icon: "devicon-windows8-plain colored" },
     ],
     downloadUrl: "https://github.com/sylvzzz/Quizzes",
-    demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7419830162613178368/?originTrackingId=jRpTMNSelH7ADEnDLdKmMA%3D%3D"
+    demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7419830162613178368/?originTrackingId=jRpTMSelH7ADEnDLdKmMA%3D%3D"
   },
   {
     id: 4,
@@ -182,10 +182,15 @@ const SOCIAL_LINKS = [
   { name: "Instagram", icon: Instagram, url: "https://instagram.com/sylvz._" }
 ];
 
+const LANG_COLORS = [
+  '#534AB7','#1D9E75','#D85A30','#378ADD',
+  '#BA7517','#D4537E','#639922','#E24B4A'
+];
+
 // ─── ANIMATIONS (CSS) ─────────────────────────────────────────────────────────
 
 const GlobalStyles = () => (
-  <style jsx>{`
+  <style>{`
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -194,6 +199,10 @@ const GlobalStyles = () => (
       from { opacity: 0; transform: translateX(-20px); }
       to   { opacity: 1; transform: translateX(0); }
     }
+    @keyframes barGrow {
+      from { width: 0%; }
+    }
+    .lang-bar { animation: barGrow 0.8s ease-out forwards; }
   `}</style>
 );
 
@@ -211,7 +220,6 @@ const BackgroundOrbs = () => (
 const Header = () => (
   <header className="container mx-auto px-6 py-20">
     <div className="max-w-5xl mx-auto">
-
       <div
         className="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-transparent bg-clip-padding rounded-full"
         style={{ borderImage: 'linear-gradient(90deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1' }}
@@ -244,24 +252,23 @@ const Header = () => (
         </div>
       </div>
 
-     <div className="flex flex-wrap gap-4">
-      {SOCIAL_LINKS.map((social, index) => (
-      <a
-        key={social.name}
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
-      >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
-      <span className="relative z-10 font-semibold text-gray-700 group-hover:text-white transition-colors">
-        {social.name}
-      </span>
-    </a>
-  ))}
-</div>
-
+      <div className="flex flex-wrap gap-4">
+        {SOCIAL_LINKS.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
+            <span className="relative z-10 font-semibold text-gray-700 group-hover:text-white transition-colors">
+              {social.name}
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   </header>
 );
@@ -302,6 +309,155 @@ const TechStack = () => (
     </div>
   </section>
 );
+
+// ─── TOP LANGS ────────────────────────────────────────────────────────────────
+
+const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => {
+  const [state, setState] = useState({ loading: true, error: null, langs: [], repos: 0, total: 0 });
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const token = import.meta.env.VITE_GITHUB_TOKEN;
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+        const res = await fetch(
+          `https://api.github.com/users/${username}/repos?per_page=100&sort=updated`,
+          { headers }
+        );
+        const repoList = await res.json();
+
+        if (!Array.isArray(repoList)) {
+          throw new Error(repoList.message ?? 'GitHub API error');
+        }
+
+        const nonFork = repoList.filter(r =>
+          !r.fork &&
+          r.language &&
+          !excludeRepos.map(e => e.toLowerCase()).includes(r.name.toLowerCase())
+        );
+        const totals = {};
+
+        for (let i = 0; i < nonFork.length; i += 5) {
+          const chunk = nonFork.slice(i, i + 5);
+          const results = await Promise.allSettled(
+            chunk.map(r => fetch(r.languages_url, { headers }).then(r => r.json()))
+          );
+          results.forEach(res => {
+            if (res.status === 'fulfilled' && typeof res.value === 'object') {
+              Object.entries(res.value).forEach(([lang, bytes]) => {
+                totals[lang] = (totals[lang] || 0) + bytes;
+              });
+            }
+          });
+        }
+
+        const sorted = Object.entries(totals)
+          .filter(([lang]) => !exclude.map(e => e.toLowerCase()).includes(lang.toLowerCase()))
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 8);
+        const total = sorted.reduce((s, [, v]) => s + v, 0);
+
+        setState({ loading: false, error: null, langs: sorted, repos: nonFork.length, total });
+      } catch (e) {
+        setState(s => ({ ...s, loading: false, error: e.message }));
+      }
+    }
+    load();
+  }, [username]);
+
+  const { loading, error, langs, repos, total } = state;
+
+  return (
+    <section className="container mx-auto px-6 py-20">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-3 mb-10">
+          <Github className="w-8 h-8 text-purple-600" />
+          <h2 className="text-4xl font-bold text-gray-900">Top Languages</h2>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-2xl blur opacity-20" />
+          <div
+            className="relative bg-white p-8 rounded-2xl border-2 border-transparent bg-clip-padding"
+            style={{ borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1' }}
+          >
+            {loading && (
+              <p className="text-gray-500 text-sm animate-pulse">Fetching languages from GitHub...</p>
+            )}
+
+            {error && (
+              <p className="text-red-500 text-sm">Error: {error}</p>
+            )}
+
+            {!loading && !error && (
+              <>
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {[
+                    { label: 'Total Repositories', value: repos },
+                    { label: 'Total Languages', value: langs.length },
+                    { label: 'Predominant language', value: langs[0]?.[0] ?? '—' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-xl p-4">
+                      <p className="text-xs text-gray-500 mb-1">{label}</p>
+                      <p className="text-xl font-bold text-gray-900">{value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex w-full h-3 rounded-full overflow-hidden mb-4">
+                  {langs.map(([lang, bytes], i) => (
+                    <div
+                      key={lang}
+                      title={`${lang} — ${(bytes / total * 100).toFixed(1)}%`}
+                      style={{ flex: bytes / total, background: LANG_COLORS[i % LANG_COLORS.length] }}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-x-4 gap-y-2 mb-8">
+                  {langs.map(([lang], i) => (
+                    <div key={lang} className="flex items-center gap-1.5 text-xs text-gray-600">
+                      <span
+                        className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
+                        style={{ background: LANG_COLORS[i % LANG_COLORS.length] }}
+                      />
+                      {lang}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  {langs.map(([lang, bytes], i) => {
+                    const pct = (bytes / total * 100).toFixed(1);
+                    const barW = Math.round(bytes / langs[0][1] * 100);
+                    return (
+                      <div key={lang} className="flex items-center gap-3">
+                        <span className="text-xs text-gray-400 w-4 text-right flex-shrink-0">{i + 1}</span>
+                        <span className="text-sm font-semibold text-gray-800 w-28 flex-shrink-0">{lang}</span>
+                        <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className="lang-bar h-full rounded-full"
+                            style={{
+                              width: `${barW}%`,
+                              background: LANG_COLORS[i % LANG_COLORS.length],
+                              animationDelay: `${i * 0.08}s`,
+                            }}
+                          />
+                        </div>
+                        <span className="text-xs text-gray-500 w-10 text-right flex-shrink-0">{pct}%</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 // ─── PROJECT CARD ─────────────────────────────────────────────────────────────
 
@@ -402,12 +558,10 @@ const Projects = () => {
 const Footer = () => (
   <footer className="container mx-auto px-6 py-12 mt-20">
     <div className="max-w-5xl mx-auto text-center border-t-2 border-gray-200 pt-12">
-      <p className="text-gray-600 font-medium">© 2025 Diogo Silva</p>
+      <p className="text-gray-600 font-medium">© 2026 - Diogo Silva</p>
     </div>
   </footer>
 );
-
-// ─── ROOT COMPONENT ───────────────────────────────────────────────────────────
 
 export default function Portfolio() {
   return (
@@ -418,6 +572,11 @@ export default function Portfolio() {
       <div className="relative z-10">
         <Header />
         <TechStack />
+        <TopLangs
+          username="sylvzzz"
+          exclude={["Hack", "Makefile"]}
+          excludeRepos={["PAP_2025", "Quizzes"]}
+        />
         <Projects />
         <Footer />
       </div>
