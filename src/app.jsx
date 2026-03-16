@@ -394,9 +394,9 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
               <>
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   {[
-                    { label: 'Total Repositories', value: repos },
+                    { label: 'Total Repos', value: repos },
                     { label: 'Total Languages', value: langs.length },
-                    { label: 'Predominant language', value: langs[0]?.[0] ?? '—' },
+                    { label: 'Top language', value: langs[0]?.[0] ?? '—' },
                   ].map(({ label, value }) => (
                     <div key={label} className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-xl p-4">
                       <p className="text-xs text-gray-500 mb-1">{label}</p>
