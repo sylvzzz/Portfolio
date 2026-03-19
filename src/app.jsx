@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram } from 'lucide-react';
+import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram, Users, Cpu, Wifi, Headset, Network, Brain,Terminal, Server} from 'lucide-react';
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -164,15 +164,15 @@ const SKILLS = [
   { name: "GitHub", icon: "devicon-github-original" },
   { name: "Apache", icon: "devicon-apache-plain colored" },
   { name: "WordPress", icon: "devicon-wordpress-plain colored" },
-  { name: "Peer-to-Peer", icon: null },
-  { name: "Computer Networks", icon: null },
-  { name: "Computer Hardware", icon: null },
-  { name: "Technical Support", icon: null },
-  { name: "System Design", icon: null },
-  { name: "Problem Solving", icon: null },
-  { name: "System Administration", icon: null },
-  { name: "SSH", icon: null },
-  { name: "Email Automation", icon: null }
+  { name: "Peer-to-Peer",          lucide: Users },
+  { name: "Computer Networks",     lucide: Wifi },
+  { name: "Computer Hardware",     lucide: Cpu },
+  { name: "Technical Support",     lucide: Headset },
+  { name: "System Design",         lucide: Network },
+  { name: "Problem Solving",       lucide: Brain },
+  { name: "System Administration", lucide: Terminal },
+  { name: "SSH",                   lucide: Server },
+  { name: "Email Automation",      lucide: Mail },
 ];
 
 const SOCIAL_LINKS = [
@@ -183,8 +183,8 @@ const SOCIAL_LINKS = [
 ];
 
 const LANG_COLORS = [
-  '#534AB7','#1D9E75','#D85A30','#378ADD',
-  '#BA7517','#D4537E','#639922','#E24B4A'
+  '#6366f1','#22d3ee','#f472b6','#34d399',
+  '#fb923c','#a78bfa','#facc15','#f87171'
 ];
 
 // ─── ANIMATIONS (CSS) ─────────────────────────────────────────────────────────
@@ -210,8 +210,8 @@ const GlobalStyles = () => (
 
 const BackgroundOrbs = () => (
   <>
-    <div className="fixed top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
-    <div className="fixed bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-pink-200 via-purple-200 to-blue-200 rounded-full blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2" />
+    <div className="fixed top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/2" />
+    <div className="fixed bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-pink-900 via-purple-900 to-indigo-900 rounded-full blur-3xl opacity-40 translate-y-1/2 -translate-x-1/2" />
   </>
 );
 
@@ -221,29 +221,25 @@ const Header = () => (
   <header className="container mx-auto px-6 py-20">
     <div className="max-w-5xl mx-auto">
       <div
-        className="inline-flex items-center gap-2 px-5 py-2 mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-transparent bg-clip-padding rounded-full"
-        style={{ borderImage: 'linear-gradient(90deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1' }}
+        className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full border border-white/10 bg-white/5"
       >
-        <Sparkles className="w-4 h-4 text-purple-500" />
-        <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <Sparkles className="w-4 h-4 text-purple-400" />
+        <span className="text-sm font-semibold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
           Student @ 42 Lisboa
         </span>
       </div>
 
-      <h1 className="text-7xl md:text-8xl font-black mb-4 tracking-tight text-gray-900">
+      <h1 className="text-7xl md:text-8xl font-black mb-4 tracking-tight text-white">
         Diogo Silva
       </h1>
-      <h2 className="text-3xl md:text-4xl font-light text-gray-600 mb-12">
+      <h2 className="text-3xl md:text-4xl font-light text-gray-400 mb-12">
         Junior Full Stack Developer
       </h2>
 
       <div className="relative mb-12">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-2xl blur opacity-20" />
-        <div
-          className="relative bg-white p-8 rounded-2xl border-2 border-transparent bg-clip-padding"
-          style={{ borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1' }}
-        >
-          <p className="text-lg text-gray-700 leading-relaxed">
+        <div className="absolute -inset-1 bg-gradient-to-r {/*from-orange-500*/} to-purple-500 rounded-2xl blur opacity-20" />
+        <div className="relative bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
+          <p className="text-lg text-gray-300 leading-relaxed">
             Hello, I'm Diogo. I'm 19 years old and I'm really passionate about technology and web development.
             At the moment, I'm a student at 42 Lisbon, where I'm learning mainly Python and C, and acquiring
             important skills like peer-to-peer learning and high rigor. Outside of 42, I try to improve my web
@@ -259,11 +255,11 @@ const Header = () => (
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
+            className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <social.icon className="relative z-10 w-5 h-5 text-gray-700 group-hover:text-white transition-colors" />
-            <span className="relative z-10 font-semibold text-gray-700 group-hover:text-white transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <social.icon className="relative z-10 w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+            <span className="relative z-10 font-semibold text-gray-300 group-hover:text-white transition-colors">
               {social.name}
             </span>
           </a>
@@ -277,15 +273,14 @@ const Header = () => (
 
 const SkillBadge = ({ skill, index }) => (
   <div
-    className="group px-6 py-3 bg-white rounded-xl border-2 border-gray-200 hover:border-transparent transition-all duration-300 cursor-default overflow-hidden relative"
+    className="group px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:border-transparent transition-all duration-300 cursor-default overflow-hidden relative"
     style={{ animation: `fadeIn 0.5s ease-out ${index * 0.05}s backwards` }}
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     <div className="relative z-10 flex items-center gap-2">
-      {skill.icon && (
-        <i className={`${skill.icon} text-xl group-hover:grayscale group-hover:brightness-200 transition-all duration-300`} />
-      )}
-      <span className="font-mono text-sm font-semibold text-gray-700 group-hover:text-white transition-colors">
+      {skill.lucide && <skill.lucide className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />}
+      {skill.icon   && <i className={`${skill.icon} text-xl group-hover:grayscale group-hover:brightness-200 transition-all duration-300`} />}
+      <span className="font-mono text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">
         {skill.name}
       </span>
     </div>
@@ -295,11 +290,11 @@ const SkillBadge = ({ skill, index }) => (
 // ─── TECH STACK SECTION ───────────────────────────────────────────────────────
 
 const TechStack = () => (
-  <section className="container mx-auto px-6 py-20 bg-gradient-to-br from-blue-50/50 via-purple-50/50 to-pink-50/50">
+  <section className="container mx-auto px-6 py-20" style={{ background: 'rgba(255,255,255,0.02)' }}>
     <div className="max-w-5xl mx-auto">
       <div className="flex items-center gap-3 mb-10">
-        <Code className="w-8 h-8 text-purple-600" />
-        <h2 className="text-4xl font-bold text-gray-900">Tech Stack</h2>
+        <Code className="w-8 h-8 text-purple-400" />
+        <h2 className="text-4xl font-bold text-white">Tech Stack</h2>
       </div>
       <div className="flex flex-wrap gap-3">
         {SKILLS.map((skill, index) => (
@@ -372,22 +367,19 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
     <section className="container mx-auto px-6 py-20">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-10">
-          <Github className="w-8 h-8 text-purple-600" />
-          <h2 className="text-4xl font-bold text-gray-900">Top Languages</h2>
+          <Github className="w-8 h-8 text-purple-400" />
+          <h2 className="text-4xl font-bold text-white">Top Languages</h2>
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-2xl blur opacity-20" />
-          <div
-            className="relative bg-white p-8 rounded-2xl border-2 border-transparent bg-clip-padding"
-            style={{ borderImage: 'linear-gradient(135deg, rgb(147, 197, 253), rgb(216, 180, 254), rgb(251, 207, 232)) 1' }}
-          >
+          <div className="absolute -inset-1 bg-gradient-to-r /*from-indigo-500 via-purple-500 to-pink-500*/ rounded-2xl blur opacity-20" />
+          <div className="relative bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
             {loading && (
               <p className="text-gray-500 text-sm animate-pulse">Fetching languages from GitHub...</p>
             )}
 
             {error && (
-              <p className="text-red-500 text-sm">Error: {error}</p>
+              <p className="text-red-400 text-sm">Error: {error}</p>
             )}
 
             {!loading && !error && (
@@ -398,9 +390,9 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
                     { label: 'Total Languages', value: langs.length },
                     { label: 'Top language', value: langs[0]?.[0] ?? '—' },
                   ].map(({ label, value }) => (
-                    <div key={label} className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-xl p-4">
+                    <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-4">
                       <p className="text-xs text-gray-500 mb-1">{label}</p>
-                      <p className="text-xl font-bold text-gray-900">{value}</p>
+                      <p className="text-xl font-bold text-white">{value}</p>
                     </div>
                   ))}
                 </div>
@@ -417,7 +409,7 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
 
                 <div className="flex flex-wrap gap-x-4 gap-y-2 mb-8">
                   {langs.map(([lang], i) => (
-                    <div key={lang} className="flex items-center gap-1.5 text-xs text-gray-600">
+                    <div key={lang} className="flex items-center gap-1.5 text-xs text-gray-400">
                       <span
                         className="w-2.5 h-2.5 rounded-sm flex-shrink-0"
                         style={{ background: LANG_COLORS[i % LANG_COLORS.length] }}
@@ -433,9 +425,9 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
                     const barW = Math.round(bytes / langs[0][1] * 100);
                     return (
                       <div key={lang} className="flex items-center gap-3">
-                        <span className="text-xs text-gray-400 w-4 text-right flex-shrink-0">{i + 1}</span>
-                        <span className="text-sm font-semibold text-gray-800 w-28 flex-shrink-0">{lang}</span>
-                        <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                        <span className="text-xs text-gray-600 w-4 text-right flex-shrink-0">{i + 1}</span>
+                        <span className="text-sm font-semibold text-gray-200 w-28 flex-shrink-0">{lang}</span>
+                        <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
                           <div
                             className="lang-bar h-full rounded-full"
                             style={{
@@ -465,21 +457,21 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
   <div
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
-    className="group relative bg-white rounded-2xl border-2 border-gray-200 hover:border-transparent p-8 transition-all duration-500 overflow-hidden"
+    className="group relative bg-white/5 border border-white/10 rounded-2xl hover:border-transparent p-8 transition-all duration-500 overflow-hidden"
     style={{ animation: `slideIn 0.6s ease-out ${index * 0.1}s backwards` }}
   >
-    <div className={`absolute inset-0 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 opacity-0 transition-opacity duration-500 ${isHovered ? 'opacity-100' : ''}`} />
+    <div className={`absolute inset-0 bg-gradient-to-r /*from-indigo-500 via-purple-500 to-pink-500*/ opacity-0 transition-opacity duration-500 ${isHovered ? 'opacity-100' : ''}`} />
 
-    <div className={`relative bg-white rounded-xl transition-all duration-500 ${isHovered ? 'm-0.5' : ''}`}>
+    <div className={`relative bg-[#0a0a0a] rounded-xl transition-all duration-500 ${isHovered ? 'm-0.5' : ''}`}>
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.name}</h3>
-        <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+        <h3 className="text-2xl font-bold text-white mb-3">{project.name}</h3>
+        <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((tech) => (
             <span
               key={tech.name}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 rounded-full text-sm font-mono font-semibold text-gray-700"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-mono font-semibold text-gray-300"
             >
               {tech.icon && <i className={`${tech.icon} text-base`} />}
               {tech.name}
@@ -498,7 +490,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
                 alert('The download is not available for this project');
               }
             }}
-            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
           >
             <Download className="w-5 h-5" />
             <span>Download</span>
@@ -513,7 +505,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
                 alert("There isn't a showcase available for this project yet.");
               }
             }}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 hover:border-purple-400 rounded-xl font-semibold text-gray-700 hover:text-purple-600 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-gray-300 hover:text-purple-400 transition-all duration-300"
           >
             <ExternalLink className="w-5 h-5" />
             <span>Demo</span>
@@ -530,11 +522,11 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   return (
-    <section className="container mx-auto px-6 py-20">
+    <section className="container mx-auto px-6 py-20" style={{ background: 'rgba(255,255,255,0.02)' }}>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
-          <Layers className="w-8 h-8 text-purple-600" />
-          <h2 className="text-4xl font-bold text-gray-900">Projects</h2>
+          <Layers className="w-8 h-8 text-purple-400" />
+          <h2 className="text-4xl font-bold text-white">Projects</h2>
         </div>
         <div className="space-y-6">
           {PROJECTS.map((project, index) => (
@@ -557,15 +549,15 @@ const Projects = () => {
 
 const Footer = () => (
   <footer className="container mx-auto px-6 py-12 mt-20">
-    <div className="max-w-5xl mx-auto text-center border-t-2 border-gray-200 pt-12">
-      <p className="text-gray-600 font-medium">© 2026 - Diogo Silva</p>
+    <div className="max-w-5xl mx-auto text-center border-t border-white/10 pt-12">
+      <p className="text-gray-500 font-medium">© 2026 - Diogo Silva</p>
     </div>
   </footer>
 );
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       <GlobalStyles />
       <BackgroundOrbs />
