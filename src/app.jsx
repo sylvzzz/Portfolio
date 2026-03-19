@@ -207,14 +207,14 @@ const GlobalStyles = () => (
 );
 
 // ─── BACKGROUND ORBS ─────────────────────────────────────────────────────────
-
+{/*
 const BackgroundOrbs = () => (
   <>
     <div className="fixed top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/2" />
     <div className="fixed bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-pink-900 via-purple-900 to-indigo-900 rounded-full blur-3xl opacity-40 translate-y-1/2 -translate-x-1/2" />
   </>
 );
-
+*/}
 // ─── HEADER ──────────────────────────────────────────────────────────────────
 
 const Header = () => (
@@ -560,7 +560,6 @@ export default function Portfolio() {
     <div className="min-h-screen bg-[#0a0a0a]">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       <GlobalStyles />
-      <BackgroundOrbs />
       <div className="relative z-10">
         <Header />
         <TechStack />
