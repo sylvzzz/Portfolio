@@ -228,13 +228,23 @@ const Header = () => (
           Student @ 42 Lisboa
         </span>
       </div>
-
       <h1 className="text-7xl md:text-8xl font-black mb-4 tracking-tight text-white">
         Diogo Silva
       </h1>
-      <h2 className="text-3xl md:text-4xl font-light text-gray-400 mb-12">
+      <h2 className="text-3xl md:text-4xl font-light text-gray-400 mb-4">
         Junior Full Stack Developer
       </h2>
+
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 mb-10">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+        </span>
+
+        <span className="text-xs font-semibold text-green-400">
+          Open to work
+        </span>
+      </div>
 
       <div className="relative mb-12">
         <div className="absolute -inset-1 bg-gradient-to-r {/*from-orange-500*/} to-purple-500 rounded-2xl blur opacity-20" />
@@ -522,7 +532,7 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   return (
-    <section className="container mx-auto px-6 py-20" style={{ background: 'rgba(255,255,255,0.02)' }}>
+    <section className="container mx-auto px-6 py-20" style={{ background: '#0a0a0a' }}>
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <Layers className="w-8 h-8 text-purple-400" />
