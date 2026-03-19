@@ -575,7 +575,7 @@ export default function Portfolio() {
         <TopLangs
           username="sylvzzz"
           exclude={["Hack", "Makefile"]}
-          excludeRepos={["PAP_2025", "Quizzes"]}
+          excludeRepos={["PAP_2025"]}
         />
         <Projects />
         <Footer />
