@@ -114,25 +114,26 @@ Around line 80, same as the last example, follow this example
   ];
 ```
 
-To costumize the project´s section, around line 5 customize the projects data:
+To costumize the project´s section, around line 5 delete my projects and add yours:
+
+Example:
 
 ```JavaScript
-const projects = [
-    {
-      id: 1,
-      name: "PAP 2025",
-      description: "Rede Social/Aplicação Web similar ao Reddit criada para conectar alunos da minha escola secundária",
-      tech: [
-        { name: "PHP", icon: "devicon-php-plain colored" },
-        { name: "MySQL", icon: "devicon-mysql-plain colored" },
-        { name: "JavaScript", icon: "devicon-javascript-plain colored" },
-        { name: "HTML", icon: "devicon-html5-plain colored" },
-        { name: "Apache", icon: "devicon-apache-plain colored" },
-      ],
-      downloadUrl: "https://github.com/sylvzzz/PAP_2025",
-      demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7419835227658936320/?originTrackingId=yc7dzwh%2F41pFciTsk2pnJw%3D%3D"
-    },
+const PAP_2025 = {
+  name: "PAP 2025",
+  description: "My PAP(Professional Final Project for professional courses in Portugal). This project was developed with 2 other peers of my 24-25 class. This web platform consists in a social media web app for our school as a way to connect the community. Our project includes features such as News of our school, forums similar to reddit, and verification to only allow accounts with student email",
+  tech: [
+    { name: "PHP", icon: "devicon-php-plain colored" },
+    { name: "MySQL", icon: "devicon-mysql-plain colored" },
+    { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+    { name: "HTML", icon: "devicon-html5-plain colored" },
+    { name: "Apache", icon: "devicon-apache-plain colored" },
+  ],
+  downloadUrl: "https://github.com/sylvzzz/PAP_2025",
+  demoUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7419835227658936320/?originTrackingId=yc7dzwh%2F41pFciTsk2pnJw%3D%3D"
+};
 ```
+
 If you put # on the links, there will be a notification alerting that there isn´t a demo/download available:
 
 ```JavaScript
@@ -143,6 +144,24 @@ if (project.demoUrl === '#')
 }
 ```
 
+If you're a programmer/software developer etc, the top languages part is simple, at the bottom of app.jsx, just change the values: 
+
+```javascript
+<TopLangs
+          username="sylvzzz"
+          exclude={["Hack", "Makefile"]}
+          excludeRepos={["PAP_2025", "Quizzes"]}
+/>
+```
+
+| Prop | Default Value | Description |
+|:---:|:---:|:---:|
+| username | your_username | The github profile wich the GitHub API will calculate top languages from. |
+| exclude | none | The github languages wich the GitHub API will ignore.|
+| excludeRepos | none | The github repositories wich the GitHub API will not count.
+
+<br>
+
 Finally on line 262, change my name to yours:
 
 ```JavaScript
@@ -152,7 +171,7 @@ Finally on line 262, change my name to yours:
 ```
 
 
-**If you really intend to deploy your portfolio follow the next commands, else you just want to run it locally just enter your project folder in a terminal window and type **npm install** and **npm run dev**, then just enter your browser and access <a href="https://localhost:5173">localhost:5173</a>"**
+**If you really intend to deploy your portfolio follow the next commands, else you just want to run it locally just enter your project folder in a terminal window and type **npm install** and **npm run dev**, then just enter your browser and access <a href="https://localhost:5173">localhost:5173</a>**
 
 ## Moving files to the deployment repository
 
@@ -173,3 +192,6 @@ git commit -m "Your notes for this upload" #confirms changes in the repo
 git push #pushes the uploads
 ```
 if everything went well, got to <a href="https://vercel.com">vercel.com</a> and create a new project, the platform will ask to put the link for your project repository, once you insert it and confirm, the platform will build your portfolio and it should be live.
+
+
+## If you had any trouble using/setting up the component, please contact me! Contact info [here](https://diogo-lb-silva.vercel.app)
