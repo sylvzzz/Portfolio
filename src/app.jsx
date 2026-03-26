@@ -596,7 +596,7 @@ export default function Portfolio() {
         <TechStack />
         <TopLangs
           username="sylvzzz"
-          exclude={["Hack", "Makefile"]}
+          exclude={["Hack", "Makefile", "Typescript"]}
           excludeRepos={["PAP_2025", "Quizzes"]}
         />
         <Projects />
