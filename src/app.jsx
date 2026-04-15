@@ -157,7 +157,7 @@ const A_MAZE_ING = {
     { name: "Bash", icon: "devicon-bash-plain" },
   ],
   downloadUrl: "https://github.com/sylvzzz/a-maze-ing",
-  demoUrl: "#"
+  demoUrl: "https://www.linkedin.com/posts/diogo-lb-silva_42lisboa-python-programming-activity-7450264982140653568-0EMy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF5-g4gBW8QOO4F5K8vMQ7Vvt3uasQJNTPs"
 };
 
 const PROJECTS = [
