@@ -148,9 +148,20 @@ const LIBFT = {
   demoUrl: "#"
 };
 
+const A_MAZE_ING = {
+  name: "A-maze-ing",
+  description: "42 common core milestone 2 project that consists in a Maze generator and solver with terminal ASCII rendering focused on efficient algorithms and clean code design, implementing optimized pathfinding techniques to build and solve complex mazes.",
+  tech: [
+    { name: "Python", icon: "devicon-python-plain colored" },
+  ],
+  downloadUrl: "https://github.com/sylvzzz/a-maze-ing",
+  demoUrl: "#"
+};
+
 const PROJECTS = [
   PAP_2025,
   FRIENDEBT,
+  A_MAZE_ING,
   QUIZZES_PLATFORM,
   PHOTOGRAPHY_JR,
   TOP_LANGS,
