@@ -153,6 +153,8 @@ const A_MAZE_ING = {
   description: "42 common core milestone 2 project that consists in a Maze generator and solver with terminal ASCII rendering focused on efficient algorithms and clean code design, implementing optimized pathfinding techniques to build and solve complex mazes.",
   tech: [
     { name: "Python", icon: "devicon-python-plain colored" },
+    { name: "Linux", icon: "devicon-linux-plain" },
+    { name: "Bash", icon: "devicon-bash-plain" },
   ],
   downloadUrl: "https://github.com/sylvzzz/a-maze-ing",
   demoUrl: "#"
