@@ -75,8 +75,8 @@ const TOP_LANGS = {
 };
 
 const CALENDAR_PLATFORM = {
-  name: "Calendar Platform",
-  description: "CRUD Web App for scheduling meetings developed for a school to manage internal meetings, similar to google calendar, Guest mode feature avaliable for view only of the schedule, asks for login to Schedule or to edit. Simple Authorization implemented so only the user that scheduled the meeting can edit or delete meeting.",
+  name: "Calendar Manager",
+  description: "CRUD Web App developed for a school to schedule amd manage internal meetings, similar to google calendar, Guest mode feature avaliable for view only of the schedule, asks for login to Schedule or to edit. Simple Authorization implemented so only the user that scheduled the meeting can edit or delete meeting.",
   tech: [
     { name: "PHP", icon: "devicon-php-plain colored" },
     { name: "MySQL", icon: "devicon-mysql-plain colored" },
@@ -164,10 +164,10 @@ const PROJECTS = [
   PAP_2025,
   FRIENDEBT,
   A_MAZE_ING,
-  QUIZZES_PLATFORM,
   PHOTOGRAPHY_JR,
   TOP_LANGS,
   CALENDAR_PLATFORM,
+  QUIZZES_PLATFORM,
   PUSH_SWAP,
   MY_PORTFOLIO,
   PISCINE_PYTHON,
