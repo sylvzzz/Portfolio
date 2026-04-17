@@ -412,7 +412,7 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-10">
           <Github className="w-8 h-8 text-purple-400" />
-          <h2 className="text-4xl font-bold text-white">Top Languages</h2>
+          <h2 className="text-4xl font-bold text-white">My Languages</h2>
         </div>
 
         <div className="relative">
