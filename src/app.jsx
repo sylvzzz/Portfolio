@@ -160,12 +160,27 @@ const A_MAZE_ING = {
   demoUrl: "https://www.linkedin.com/posts/diogo-lb-silva_42lisboa-python-programming-activity-7450264982140653568-0EMy?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF5-g4gBW8QOO4F5K8vMQ7Vvt3uasQJNTPs"
 };
 
+const FAMILY_STOCK = {
+  name: "FamilyStock",
+  description: "Web Platform to manage home stocks including dashboard, inventory and shopping list with AI suggestions and notifications of restocks needed.",
+  tech: [
+    { name: "React.js", icon: "devicon-react-original colored" },
+    { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
+    { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+    { name: "Vercel", icon: "devicon-vercel-plain" },
+    { name: "Supabase", icon: "devicon-supabase-plain colored" },
+  ],
+  downloadUrl: "#",
+  demoUrl: "#"
+};
+
 const PROJECTS = [
   PAP_2025,
   FRIENDEBT,
   A_MAZE_ING,
   PHOTOGRAPHY_JR,
   TOP_LANGS,
+  FAMILY_STOCK,
   CALENDAR_PLATFORM,
   QUIZZES_PLATFORM,
   PUSH_SWAP,
