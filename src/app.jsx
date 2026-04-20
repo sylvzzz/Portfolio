@@ -618,20 +618,6 @@ const Footer = () => (
 export default function Portfolio() {
   return (
     <HelmetProvider>
-      <Helmet>
-      <title>Diogo Silva - Full Stack Developer</title>
-      
-      <meta name="description" content="Full Stack Developer | React.js • Python • Node.js • C | Student at 42 Lisboa" />
-      
-      <meta name="keywords" content="developer, full stack, react, nodejs, portugal, 42, 42lisbon, 42lisboa, web, html, css, javascript, github, programming" />
-      
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Diogo Silva - Full Stack Developer" />
-      <meta property="og:description" content="Full Stack Developer | React.js • Python • Node.js • C | Student at 42 Lisboa" />
-      <meta property="og:image" content="https://diogo-lb-silva.vercel.app/og-image.png" />
-      <meta property="og:url" content="https://diogo-lb-silva.vercel.app" />
-      <meta property="og:site_name" content="Diogo Silva Portfolio" />
-      </Helmet>
     <div className="min-h-screen bg-[#0a0a0a]">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       <GlobalStyles />
