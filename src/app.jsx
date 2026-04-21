@@ -29,10 +29,18 @@ const useInView = (options = {}) => {
 
 const AnimatedSection = ({ children, delay = 0 }) => {
   const [ref, isVisible] = useInView({ threshold: 0.1 });
+
+  // Fallback: force visible after 2s in case observer doesn't fire
+  const [forceVisible, setForceVisible] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setForceVisible(true), 2000);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <div ref={ref}>
       <div
-        className={`surge-up ${isVisible ? 'visible' : ''}`}
+        className={`surge-up ${isVisible || forceVisible ? 'visible' : ''}`}
         style={{ animationDelay: `${delay}ms` }}
       >
         {children}
@@ -606,7 +614,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
             onClick={(e) => {
               if (project.demoUrl === '#') {
                 e.preventDefault();
-                notify('Not available',"There isn't a showcase available for this project yet.");
+                notify('Not available',"There isn't a demonstration available for this project yet.");
               }
             }}
             className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3  bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-[#fff4d6] overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
