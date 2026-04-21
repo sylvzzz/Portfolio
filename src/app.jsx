@@ -1,8 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram, Users, Cpu, Wifi, Headset, Network, Brain,Terminal, Server} from 'lucide-react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { useNotification } from './components/Notification';
+const useInView = (options = {}) => {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.unobserve(el);
+      }
+    }, { threshold: 0.1, ...options });
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return [ref, isVisible];
+};
+
+
+const AnimatedSection = ({ children, delay = 0 }) => {
+  const [ref, isVisible] = useInView({ threshold: 0.1 });
+  return (
+    <div ref={ref}>
+      <div
+        className={`surge-up ${isVisible ? 'visible' : ''}`}
+        style={{ animationDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
 const PAP_2025 = {
   name: "PAP 2025",
   description: "My PAP(Professional Final Project for professional courses in Portugal). This project was developed with 2 other peers of my 24-25 class. This web platform consists in a social media web app for our school as a way to connect the community. Our project includes features such as News of our school, forums similar to reddit, and verification to only allow accounts with student email",
@@ -249,10 +285,16 @@ const GlobalStyles = () => (
       from { opacity: 0; transform: translateX(-20px); }
       to   { opacity: 1; transform: translateX(0); }
     }
+    @keyframes surgeUp {
+      from { opacity: 0; margin-top: 60px; }
+      to   { opacity: 1; margin-top: 0px; }
+    }
     @keyframes barGrow {
       from { width: 0%; }
     }
     .lang-bar { animation: barGrow 0.8s ease-out forwards; }
+    .surge-up { opacity: 0; }
+    .surge-up.visible { animation: surgeUp 0.7s ease-out forwards; }
   `}</style>
 );
 
@@ -513,7 +555,10 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
 
 // ─── PROJECT CARD ─────────────────────────────────────────────────────────────
 
-const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) => (
+const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) => {
+  const notify = useNotification();
+
+  return (
   <div
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
@@ -547,7 +592,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
             onClick={(e) => {
               if (project.downloadUrl === '#') {
                 e.preventDefault();
-                alert('The download is not available for this project');
+                notify('Not available','The download is not available for this project');
               }
             }}
             className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
@@ -562,7 +607,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
             onClick={(e) => {
               if (project.demoUrl === '#') {
                 e.preventDefault();
-                alert("There isn't a showcase available for this project yet.");
+                notify('Not available',"There isn't a showcase available for this project yet.");
               }
             }}
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-gray-300 hover:text-purple-400 transition-all duration-300"
@@ -574,7 +619,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
       </div>
     </div>
   </div>
-);
+)};
 
 // ─── PROJECTS SECTION ─────────────────────────────────────────────────────────
 
@@ -623,14 +668,14 @@ export default function Portfolio() {
       <GlobalStyles />
       <div className="relative z-10">
         <Header />
-        <TechStack />
-        <TopLangs
+        <AnimatedSection><TechStack /></AnimatedSection>
+        <AnimatedSection delay={150}><TopLangs
           username="sylvzzz"
           exclude={["Hack", "Makefile", "Typescript"]}
           excludeRepos={["PAP_2025", "Quizzes","Plano-Anual-de-Atividades"]}
-        />
-        <Projects />
-        <Footer />
+        /></AnimatedSection>
+        <AnimatedSection delay={300}><Projects /></AnimatedSection>
+        <AnimatedSection delay={450}><Footer /></AnimatedSection>
       </div>
     </div>
     </HelmetProvider>
