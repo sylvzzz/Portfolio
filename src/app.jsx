@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Github, Linkedin, Download, ExternalLink, Sparkles, Code, Layers, Mail, Instagram, Users, Cpu, Wifi, Headset, Network, Brain,Terminal, Server} from 'lucide-react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useNotification } from './components/Notification';
+import TerminalCard from "./components/terminal"
+
 const useInView = (options = {}) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -233,7 +235,7 @@ const SKILLS = [
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
   { name: "HTML", icon: "devicon-html5-plain colored" },
   { name: "CSS", icon: "devicon-css3-plain colored" },
-  { name: "React", icon: "devicon-react-original colored" },
+  { name: "React.js", icon: "devicon-react-original colored" },
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
   { name: "Node.js", icon: "devicon-nodejs-plain colored" },
@@ -313,17 +315,14 @@ const Header = () => (
   <header className="container mx-auto px-6 py-20">
     <div className="max-w-5xl mx-auto">
       <div
-        className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full border border-white/10 bg-white/5"
+        className="inline-flex items-center gap-2 px-0 py- mb-5 "
       >
-        <Sparkles className="w-4 h-4 text-purple-400" />
-        <span className="text-sm font-semibold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Student @ 42 Lisboa
-        </span>
+        <TerminalCard />
       </div>
-      <h1 className="text-7xl md:text-8xl font-black mb-4 tracking-tight text-white">
+      <h1 className="text-7xl md:text-8xl font-black mb-4 tracking-tight text-[#fff4d6]">
         Diogo Silva
       </h1>
-      <h2 className="text-3xl md:text-4xl font-light text-gray-400 mb-4">
+      <h2 className="text-3xl md:text-4xl font-light text-[#fff4d6] mb-4">
         Junior Full Stack Developer
       </h2>
 
@@ -339,9 +338,9 @@ const Header = () => (
       </div>
 
       <div className="relative mb-12">
-        <div className="absolute -inset-1 bg-gradient-to-r {/*from-orange-500*/} to-purple-500 rounded-2xl blur opacity-20" />
+        <div className="absolute -inset-1 rounded-2xl blur opacity-20" />
         <div className="relative bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-lg text-white leading-relaxed">
             Hello, I'm Diogo. I'm 19 years old and I'm really passionate about technology and web development.
             At the moment, I'm a student at 42 Lisbon, where I'm learning mainly Python and C, and acquiring
             important skills like peer-to-peer learning and high rigor. Outside of 42, I try to improve my web
@@ -359,7 +358,7 @@ const Header = () => (
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:border-transparent transition-all duration-300 overflow-hidden w-[calc(50%-8px)] max-w-[160px] sm:w-auto"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <social.icon className="relative z-10 w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
             <span className="relative z-10 font-semibold text-gray-300 group-hover:text-white transition-colors">
               {social.name}
@@ -378,7 +377,7 @@ const SkillBadge = ({ skill, index }) => (
     className="group px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:border-transparent transition-all duration-300 cursor-default overflow-hidden relative"
     style={{ animation: `fadeIn 0.5s ease-out ${index * 0.05}s backwards` }}
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     <div className="relative z-10 flex items-center gap-2">
       {skill.lucide && <skill.lucide className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />}
       {skill.icon   && <i className={`${skill.icon} text-xl group-hover:grayscale group-hover:brightness-200 transition-all duration-300`} />}
@@ -392,11 +391,11 @@ const SkillBadge = ({ skill, index }) => (
 // ─── TECH STACK SECTION ───────────────────────────────────────────────────────
 
 const TechStack = () => (
-  <section className="container mx-auto px-6 py-20" style={{ background: 'rgba(255,255,255,0.02)' }}>
+  <section className="container mx-auto px-6 py-20 " style={{ background: 'rgba(255,255,255,0.02)' }}>
     <div className="max-w-5xl mx-auto">
       <div className="flex items-center gap-3 mb-10">
         <Code className="w-8 h-8 text-purple-400" />
-        <h2 className="text-4xl font-bold text-white">Tech Stack</h2>
+        <h2 className="text-4xl font-bold text-[#fff4d6]">Tech Stack</h2>
       </div>
       <div className="flex flex-wrap gap-3">
         {SKILLS.map((skill, index) => (
@@ -470,7 +469,7 @@ const TopLangs = ({ username = 'sylvzzz', exclude = [], excludeRepos = [] }) => 
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-10">
           <Github className="w-8 h-8 text-purple-400" />
-          <h2 className="text-4xl font-bold text-white">My Languages</h2>
+          <h2 className="text-4xl font-bold text-[#fff4d6]">My Languages</h2>
         </div>
 
         <div className="relative">
@@ -569,7 +568,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
 
     <div className={`relative bg-[#0a0a0a] rounded-xl transition-all duration-500 ${isHovered ? 'm-0.5' : ''}`}>
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-white mb-3">{project.name}</h3>
+        <h3 className="text-2xl font-bold text-[#fff4d6] mb-3">{project.name}</h3>
         <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
@@ -595,7 +594,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
                 notify('Not available','The download is not available for this project');
               }
             }}
-            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl font-semibold text-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3  bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-[#fff4d6] overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
           >
             <Download className="w-5 h-5" />
             <span>Download</span>
@@ -610,7 +609,7 @@ const ProjectCard = ({ project, index, isHovered, onMouseEnter, onMouseLeave }) 
                 notify('Not available',"There isn't a showcase available for this project yet.");
               }
             }}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-gray-300 hover:text-purple-400 transition-all duration-300"
+            className="flex-1 w-full sm:w-auto relative inline-flex items-center justify-center gap-2 px-6 py-3  bg-white/5 border border-white/10 hover:border-purple-500/50 rounded-xl font-semibold text-[#fff4d6] overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
           >
             <ExternalLink className="w-5 h-5" />
             <span>Demo</span>
@@ -631,7 +630,7 @@ const Projects = () => {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <Layers className="w-8 h-8 text-purple-400" />
-          <h2 className="text-4xl font-bold text-white">Projects</h2>
+          <h2 className="text-4xl font-bold text-[#fff4d6]">Projects</h2>
         </div>
         <div className="space-y-6">
           {PROJECTS.map((project, index) => (
@@ -667,7 +666,7 @@ export default function Portfolio() {
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       <GlobalStyles />
       <div className="relative z-10">
-        <Header />
+        <AnimatedSection><Header /></AnimatedSection>
         <AnimatedSection><TechStack /></AnimatedSection>
         <AnimatedSection delay={150}><TopLangs
           username="sylvzzz"
